@@ -6,6 +6,8 @@ const app = express();
 
 const port = process.env.PORT || 3000
 
+app.get('/', (req,res)=>res.send('Hello'))
+
 app.get("/customer", (req, res) => {
   fetch("https://andres-test-gradiweb.myshopify.com/admin/api/2021-04/customers.json", {
     method: "GET",
