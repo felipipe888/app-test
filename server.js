@@ -29,9 +29,9 @@ app.get("/customer", (req, res) => {
       let exist = customers.find((user)=>user.email === req.query.email)
 
       if(exist){
-          res.send({data:exist, status: false});
+          res.send({data:exist, status: true});
       }else{
-          res.send({status:true});
+          res.send({status:false});
       }
     })
     .catch((error) => {
