@@ -135,7 +135,7 @@ app.get("/products/metafields/:id", (req, res) => {
     });
 });
 
-app.get("/product", (req, res) => {
+app.get("/products", (req, res) => {
   fetch(`https://mykabuto.myshopify.com/admin/api/2021-04/products.json`, {
     method: "GET",
     headers: {
