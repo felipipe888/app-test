@@ -96,6 +96,24 @@ app.get("/variants/:id", (req, res) => {
       console.log(error);
     });
 });
+app.get("/variant/images/:id", (req, res) => {
+  fetch(`https://mykabuto.myshopify.com/admin/api/2021-04/products/${req.params.id}/images.json`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Shopify-Access-Token": "a91336d9d661d607f5233bbbaf55b2c5",
+    }  
+    })
+    .then((result) => {
+      return result.json();
+    })
+    .then((data) => {
+      res.send({data});
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 
 
