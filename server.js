@@ -156,7 +156,7 @@ app.get("/products", (req, res) => {
 });
 
 app.put("/product/update", (req, res) => {
-  console.log(req.body.formData);
+  console.log(JSON.parse(req.body.formData));
   let products = JSON.parse(req.body)
   console.log(products);
   fetch(`https://mykabuto.myshopify.com/cart/update.js`, {
