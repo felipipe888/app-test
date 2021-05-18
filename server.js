@@ -154,6 +154,27 @@ app.get("/products", (req, res) => {
     });
 });
 
+app.put("/product/update", (req, res) => {
+  console.log(req.body);
+  fetch(`https://mykabuto.myshopify.com/cart/update.js`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Shopify-Access-Token": "a91336d9d661d607f5233bbbaf55b2c5",
+    },
+    body: JSON.stringify(req.body),
+    })
+    .then((result) => {
+      return result.json();
+    })
+    .then((data) => {
+      res.send({data});
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 
 
 app.listen(port, () => console.log("Listening on port: " + port));
