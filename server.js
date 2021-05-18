@@ -163,7 +163,7 @@ app.put("/product/update", (req, res) => {
       "Content-Type": "application/json",
       "X-Shopify-Access-Token": "a91336d9d661d607f5233bbbaf55b2c5",
     },
-    body: req.body,
+    body: JSON.stringify(req.body),
     })
     .then((result) => {
       return result.json();
