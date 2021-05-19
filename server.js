@@ -155,7 +155,7 @@ app.get("/products", (req, res) => {
     });
 });
 
-app.put("/product/update", (req, res) => {
+app.post("/product/update", (req, res) => {
   console.log(req.body);
   console.log(new Object(req.body));
   let bodys = new Object(req.body)
