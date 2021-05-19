@@ -158,8 +158,8 @@ app.get("/products", (req, res) => {
 app.put("/product/update", (req, res) => {
   console.log(req.body);
   console.log(new Object(req.body));
-  let products = JSON.parse(JSON.stringify(req.body))
-  console.log(products);
+  let bodys = new Object(req.body)
+  console.log(bodys);
   fetch(`https://mykabuto.myshopify.com/cart/update.js`, {
     method: "POST",
     headers: {
